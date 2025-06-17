@@ -8,5 +8,9 @@ button1 = sg.Button("Convert")
 
 window = sg.Window("Convertor", layout=([label1, user_input1],[label2, user_input2], [button1]))
 
-window.read()
-window.close()
+while True:
+
+    event, values = window.read()
+    print(event, values)
+
+    window.close()
