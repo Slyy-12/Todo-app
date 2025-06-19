@@ -1,9 +1,11 @@
 import zipfile
+import pathlib
 
 def make_archive(filepaths, dest_dir):
-    with zipfile.ZipFile(dest_dir, 'w') as archive:
+    dest_path = pathlib.Path(dest_dir, "compressed.zip")
+    with zipfile.ZipFile(dest_path, 'w') as archive:
         for filepath in filepaths:
             archive.write(filepath)
 
 if __name__ == "__main__":
-    make_archive(filepaths=["bonus_1.py", "bonus16.py"], dest_dir="dest")
+    make_archive(filepaths=["e1.py", "e2.py"], dest_dir="dest")
