@@ -98,14 +98,12 @@ def binary2info(string):
     icons = binary2icons(string[24:28]+string[60:87], typeID)
 
     obj = {
-        "typeID": typeID,
-        "display": display_number,
-        "value_type": type(display_number).__name__,
-        "icons": icons
+        "Value":display_number,"Mode":icons[2], "Unit":icons[1]
     }
     return obj
-
-
+#Add to onj if needed
+#"typeID": typeID
+#"value_type": type(display_number).__name__,
 def decode(data):
     xorkey = "41 21 73 55 a2 c1 32 71 66 aa 3b d0 e2 a8 33 14 20 21 aa bb"
 
